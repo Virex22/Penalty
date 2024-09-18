@@ -1,0 +1,21 @@
+# Dossiers
+node_modules/
+dist/
+
+# Fichiers de configuration
+*.env
+
+# Fichiers de build
+*.js
+*.js.map
+
+# Fichiers de sauvegarde
+*.bak
+*.swp
+*.swo
+
+# Fichiers de logs
+*.log
+
+# Fichiers de cache
+.cache/
