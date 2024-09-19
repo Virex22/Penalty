@@ -23,10 +23,8 @@ type TeamScore = {
     score: TeamScore,
     remainingRounds: number
   ): boolean => {
-    return (
-        score.teamA > score.teamB + remainingRounds + 1
-        || score.teamB > score.teamA + remainingRounds + 1
-    );
+    const scoreDiff = Math.abs(score.teamA - score.teamB);
+    return scoreDiff > remainingRounds+1;
   };
   
   
@@ -62,7 +60,7 @@ type TeamScore = {
   
   const needExtraRounds = (history: HistoryEntry[]): boolean => {
     const finalScore = history[history.length - 1].score;
-    return finalScore.teamA === finalScore.teamB;
+    return finalScore.teamA === finalScore.teamB && history.length <= 50;
   };
   
   const simulateShot = (randomGenerator: () => number): boolean => randomGenerator() < 0.5;
